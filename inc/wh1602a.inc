@@ -13,7 +13,7 @@ INIT_WH1602A:
   ldi ZH, high(2*WH1602A_init_bytes)
   ldi ZL, low(2*WH1602A_init_bytes)
   lpm tmp, Z+
-	sts lcdAddr, tmp
+  sts lcdAddr, tmp
   ldi tmp, 0x07
   mov R0, tmp
   rcall CLEAR_TIMER
@@ -24,14 +24,14 @@ INIT_WH1602A:
     lpm txByte, Z+
     rcall WH1602A_SEND_COMMAND
     rcall I2CM_STOP
-	lpm dClock, Z+
-	lpm dRate, Z+
-	rcall DELAY
+    lpm dClock, Z+
+    lpm dRate, Z+
+    rcall DELAY
     dec R0
     brne _INIT_WH1602A_BYTE
   
   rcall INIT_TIMER
-	ret
+  ret
 
 ;/* /////////////////////////// 1602A Send Address ///////////////////////////// */
 WH1602A_SEND_ADDRESS:
