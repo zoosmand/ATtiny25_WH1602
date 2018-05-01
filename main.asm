@@ -62,11 +62,11 @@ MAIN:
   sbrs _EREG_, _MIF_
   rjmp _GO_TO_SLEEP
   cbr _EREG_, (1<<_MIF_)
-	rcall SEND_HALLO
+  rcall SEND_HALLO
 
   _RESTORE_TIMER:
     rcall CLEAR_TIMER
-	  rcall INIT_TIMER
+    rcall INIT_TIMER
 
   _GO_TO_SLEEP:
     in tmp, MCUCR
@@ -106,7 +106,7 @@ SEND_HALLO:
     lpm txByte, Z+
     rcall WH1602A_SEND_DATA
     rcall I2CM_STOP
-	DELAY_MACRO 0x03, 0x05 ; TCCR0B (1<<CS01)|(1<<CS00) - 64, 5, 39us
+    DELAY_MACRO 0x03, 0x05 ; TCCR0B (1<<CS01)|(1<<CS00) - 64, 5, 39us
     dec R0
     brne _SEND_HALLO_BYTE
 
