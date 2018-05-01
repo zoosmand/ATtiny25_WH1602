@@ -11,14 +11,14 @@ _WDT:
   push R0
   in R0, SREG
   push R0
-	push tmp
+  push tmp
 
   wdr
   in tmp, WDTCR
   sbr tmp, (1<<WDIE)
   out WDTCR, tmp
 
-	pop tmp
+  pop tmp
   pop R0
   out SREG, R0
   pop R0
@@ -54,8 +54,8 @@ _TIMER0_OVF:
     in tmp, MCUCR
     cbr tmp, (1<<SE)
     out MCUCR, tmp
-	set_tcnt
-	sbr _EREG_, (1<<_MIF_)
+    set_tcnt
+    sbr _EREG_, (1<<_MIF_)
 
   _OUT_OF_TIMER0:
     nop
