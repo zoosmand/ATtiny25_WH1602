@@ -8,8 +8,8 @@
 
 ;/******************************** Long Time Counter ******************************/
 .MACRO set_tcnt
-  ldi tcntH, 0x00 // 0x01 0x00
-  ldi tcntL, 0xff // 0xff 0x05
+  ldi tcntH, 0x00 ; 0x01 0x00
+  ldi tcntL, 0xff ; 0xff 0x05
 .ENDMACRO
 
 ;/*********************************** DELAY MACRO *********************************/
