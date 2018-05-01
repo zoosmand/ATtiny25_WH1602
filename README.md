@@ -7,7 +7,7 @@ Created with AlmelStudio 7.0.1645. ATtiny_DFP version 1.3.172.
 
 Make correct fuses to use internal oscillator on 8MHz.
 
-HIGH 0x9f
+HIGH 0xdf
 
 LOW 0xe2
 
